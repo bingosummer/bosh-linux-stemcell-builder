@@ -8,10 +8,10 @@ source $base_dir/lib/prelude_apply.bash
 packages="python python-pyasn1 python-setuptools"
 pkg_mgr install $packages
 
-wala_release=2.1.3
-wala_expected_sha1=e2c7576218a50b4fc1270a1a2e7f2343875c05cf
+wala_release=2.2.11.2
+wala_expected_sha1=a0f63f16ee09d4baa58ede8657c6a00a5c4dc9d3
 
-curl -L https://github.com/Azure/WALinuxAgent/archive/v${wala_release}.tar.gz > /tmp/wala.tar.gz
+curl -L https://github.com/bingosummer/WALinuxAgent/archive/v${wala_release}.tar.gz > /tmp/wala.tar.gz
 sha1=$(cat /tmp/wala.tar.gz | openssl dgst -sha1  | awk 'BEGIN {FS="="}; {gsub(/ /,"",$2); print $2}')
 if [ "${sha1}" != "${wala_expected_sha1}" ]; then
   echo "SHA1 of downloaded v${wala_release}.tar.gz ${sha1} does not match expected SHA1 ${wala_expected_sha1}."
