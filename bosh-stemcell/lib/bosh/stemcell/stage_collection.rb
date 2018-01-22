@@ -36,6 +36,7 @@ module Bosh::Stemcell
         bosh_go_agent
         aws_cli
         google_gcscli
+        azureblob_cli,
         logrotate_config
         dev_tools_config
         static_libraries_config
